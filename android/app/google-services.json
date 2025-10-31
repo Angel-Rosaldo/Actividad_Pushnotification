@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "762310662015",
+    "project_id": "firabase-55c64",
+    "storage_bucket": "firabase-55c64.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:762310662015:android:dfb5d64905786a06062c4a",
+        "android_client_info": {
+          "package_name": "com.example.turismo_notificaciones"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlEkWJHABqyZ286fUFuvs_uMK7RgamSTc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
