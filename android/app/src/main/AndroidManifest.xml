@@ -1,5 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
-<uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <!-- Permisos necesarios -->
+    <!-- Necesario para mostrar notificaciones en Android 13+ (runtime también requerido) -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <!-- Necesario para FCM y para cargar imágenes remotas en notificaciones -->
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:label="turismo_notificaciones"
         android:name="${applicationName}"

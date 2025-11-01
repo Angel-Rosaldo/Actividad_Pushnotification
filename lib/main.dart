@@ -30,11 +30,17 @@ Future<void> _requestPermissions() async {
  }
 }
 void _configureForegroundHandlers(NotificationService local) {
- FirebaseMessaging.onMessage.listen((message) {
- final title = message.notification?.title ?? 'Mensaje';
- final body = message.notification?.body ?? 'Tienes una notificación';
- // Mostrar con notificaciones locales en foreground
- local.showLocal(title: title, body: body);
+ FirebaseMessaging.onMessage.listen((message) async {
+	 final title = message.notification?.title ?? 'Mensaje';
+	 final body = message.notification?.body ?? 'Tienes una notificación';
+		// Intentar obtener imagen desde data['image'] o desde el campo android.imageUrl
+		final imageUrl = message.data['image'] ?? message.notification?.android?.imageUrl;
+	 if (imageUrl != null && imageUrl.isNotEmpty) {
+		 await local.showBigPictureFromUrl(title: title, body: body, imageUrl: imageUrl);
+	 } else {
+		 // Mostrar con notificaciones locales en foreground
+		 await local.showLocal(title: title, body: body);
+	 }
  });
  FirebaseMessaging.onMessageOpenedApp.listen((message) {
  log('onMessageOpenedApp: ${message.data}');
